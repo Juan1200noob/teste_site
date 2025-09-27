@@ -4,4 +4,6 @@ source "https://rubygems.org"
 
 gem "sinatra"
 gem "puma"
+gem "mail"
+gem "dotenv"
 gem "rackup"

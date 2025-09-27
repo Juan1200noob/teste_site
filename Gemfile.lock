@@ -2,9 +2,26 @@ GEM
   remote: https://rubygems.org/
   specs:
     base64 (0.3.0)
+    date (3.4.1)
+    dotenv (3.1.8)
     logger (1.7.0)
+    mail (2.8.1)
+      mini_mime (>= 0.1.1)
+      net-imap
+      net-pop
+      net-smtp
+    mini_mime (1.1.5)
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
+    net-imap (0.5.10)
+      date
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
+    net-protocol (0.2.2)
+      timeout
+    net-smtp (0.5.1)
+      net-protocol
     nio4r (2.7.4)
     puma (7.0.3)
       nio4r (~> 2.0)
@@ -27,12 +44,15 @@ GEM
       rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
     tilt (2.6.1)
+    timeout (0.4.3)
 
 PLATFORMS
   x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
+  dotenv
+  mail
   puma
   rackup
   sinatra
