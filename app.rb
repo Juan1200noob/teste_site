@@ -2,6 +2,7 @@ require 'sinatra'
 require 'mail'
 require 'dotenv/load'
 
+set :port, ENV['PORT'] || 4567
 
 get '/' do
   erb :index
