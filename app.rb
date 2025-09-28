@@ -19,7 +19,9 @@ post '/contact' do
             user_name:            ENV['EMAIL_APP'],
             password:             ENV['PASSWORD_APP'],
             authentication:       'plain',
-            enable_starttls_auto: true
+            enable_starttls_auto: true,
+            return_response: true  # <- retorna info do SMTP
+
         }
     end
 
@@ -27,6 +29,7 @@ post '/contact' do
         Mail.deliver do
             to ENV['EMAIL_APP']
             from ENV['EMAIL_APP']
+            reply_to email   
             subject 'Novo contato'
             body message
         end
@@ -35,9 +38,6 @@ post '/contact' do
     rescue => e
         erb :aviso, locals: { message: "Erro ao enviar: #{e.message}" }
     end 
-
-    puts "EMAIL_APP: #{ENV['EMAIL_APP']}"
-    puts "PASSWORD_APP: #{ENV['PASSWORD_APP']}"
 
     erb :aviso, locals: { message: 'Mensagem enviada com sucesso!' }
 end
