@@ -26,7 +26,7 @@ post '/contact' do
     begin
         Mail.deliver do
             to ENV['EMAIL_APP']
-            from email
+            from ENV['EMAIL_APP']
             subject 'Novo contato'
             body message
         end
