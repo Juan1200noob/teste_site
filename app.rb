@@ -38,6 +38,4 @@ post '/contact' do
     rescue => e
         erb :aviso, locals: { message: "Erro ao enviar: #{e.message}" }
     end 
-
-    erb :aviso, locals: { message: 'Mensagem enviada com sucesso!' }
 end
