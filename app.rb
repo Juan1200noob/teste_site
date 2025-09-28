@@ -31,7 +31,7 @@ post '/contact' do
             from ENV['EMAIL_APP']
             reply_to email   
             subject 'Novo contato'
-            body message
+            body "Mensagem de teste"
         end
 
         erb :aviso, locals: { message: 'Mensagem enviada com sucesso!' }
